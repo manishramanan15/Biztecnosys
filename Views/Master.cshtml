@@ -1,0 +1,191 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+    var home = @CurrentPage.Site();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="@CurrentPage.siteDescription">
+
+    <title>@CurrentPage.Name | @CurrentPage._siteTitle</title>
+	
+     @{ Html.RenderPartial("Styles");}
+	
+  </head>
+
+  <body data-scrolling-animations="true">
+     <div id="page-preloader"><span class="spinner"></span></div>
+
+      <header class="header scrolling-header">
+          <nav id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+              <div class="container relative-nav-container">
+                  <a class="toggle-button visible-xs-block" data-toggle="collapse" data-target="#navbar-collapse">
+                      <i class="fa fa-navicon"></i>
+                  </a>
+                  <a class="navbar-brand scroll" href="home.html">
+                      <img class="normal-logo hidden-xs" src="/img/logo.png" alt="logo" />
+                      <img class="scroll-logo hidden-xs" src="/img/logo-dark.png" alt="logo" />
+                      <img class="scroll-logo visible-xs-block" src="/img/logo-free.png" alt="logo" />
+                  </a>
+                  <ul class="nav navbar-nav navbar-right nav-icons wrap-user-control">
+                      <li>
+                          <a id="search-open" href="#fakelink"><i class="fa fa-search"></i></a>
+                      </li>
+                      <li class="open-signup">
+                          <a href="#fakelink"><i class="fa fa-user"></i></a>
+                      </li>
+                  </ul>
+                  <div class="navbar-collapse collapse floated" id="navbar-collapse">
+                      @{ Html.RenderPartial("MainNavigation"); }
+                  </div>
+              </div>
+              <div class="navbar-search ">
+                  <div class="container">
+                      <form>
+                          <div class="input-group">
+                              <input type="text" placeholder="Type your search..." class="form-control" autocomplete="off">
+                              <span class="input-group-btn">
+                                  <button type="reset" class="btn search-close" id="search-close">
+                                      <i class="fa fa-close"></i>
+                                  </button>
+                              </span>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </nav>
+      </header>
+
+    
+	
+    @RenderBody()
+
+
+
+      <footer>
+          <!-- ========================== -->
+          <!-- BUY SECTION -->
+          <!-- ========================== -->
+          <section class="buy-section with-icon">
+              <div class="section-icon"><span class="icon icon-Umbrella"></span></div>
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-8 col-md-offset-1 col-sm-9 wow fadeInLeft">
+                          <div class="section-text">
+                              <div class=" vcenter like">
+                                  <span class="icon icon-Like"></span>
+                              </div>
+                              <div class="buy-text vcenter">
+                                  <div class="top-text">oscend - a creative & multipurpose template</div>
+                                  <div class="bottom-text">Lorem ipsum dolor sit amet consectetur elit sed</div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3 col-sm-3  wow fadeInRight">
+                          <a href="#" class="btn btn-info ">Buy it now</a>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          <!-- ========================== -->
+          <!-- FOOTER - SOCIAL -->
+          <!-- ========================== -->
+          <section class="social-section dark dark-strong">
+              <div class="container dark-content">
+                  <div class="tt">We are social 24/7 - Get in touch</div>
+                  <ul class="list-socials">
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                      <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                  </ul>
+              </div>
+          </section>
+
+          <!-- ========================== -->
+          <!-- FOOTER - FOOTER -->
+          <!-- ========================== -->
+          <section class="footer-section">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-3 col-sm-3">
+                          <h5>about us</h5>
+                          <p>
+                              Lorem ipsum dolor sit amet consect etural
+                              adipisicing elit sed don eiusmod temp enim
+                              minim veniam quis notrud exercitation lore
+                              ipsum dolor sit amet.
+                          </p>
+                      </div>
+                      <div class="col-md-3 col-sm-3">
+                          <h5>Sitemap</h5>
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <ul class="footer-nav">
+                                      <li><a href="#">About Us</a></li>
+                                      <li><a href="#">Portfolio</a></li>
+                                      <li class="active"><a href="#">Latest News</a></li>
+                                      <li><a href="#">Contact us</a></li>
+                                  </ul>
+                              </div>
+                              <div class="col-md-6">
+                                  <ul class="footer-nav">
+                                      <li><a href="#">Get Help</a></li>
+                                      <li><a href="#">Careers</a></li>
+                                      <li><a href="#">FAQ's</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3 col-sm-3">
+                          <h5>Contact info</h5>
+                          <ul class="contacts-list">
+                              <li>
+                                  <p><i class="icon icon-House"></i>68 Landsriver Street, California  USA 22036</p>
+                              </li>
+                              <li>
+                                  <p><i class="icon icon-Phone2"></i>0800 126 01268</p>
+                              </li>
+                              <li>
+                                  <p><i class="icon icon-Mail"></i><a href="mailto:support@oscend.com">support@oscend.com</a> </p>
+
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="col-md-3 col-sm-3">
+                          <h5>newsletter</h5>
+                          <p>
+                              Subscribe to our newsletter for latest updates
+                              about our creative agency
+                          </p>
+                          <div class="form-group has-feedback">
+                              <input type="email" class="form-control " placeholder="Email address ...">
+                              <i class="icon icon-Mail form-control-feedback"></i>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+          <section class="copyright-section">
+              <p>©2015 <span>oscend Creative Agency by templines </span>. All Rights Reserved</p>
+          </section>
+      </footer>
+
+   
+		 
+
+     
+      @{ Html.RenderPartial("Scripts"); }
+   
+  </body>
+</html>

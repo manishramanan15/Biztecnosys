@@ -1,0 +1,28 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+@{
+
+        if (Model.Content.HasValue("SectionBackgroundImage"))
+        {
+            var m = Umbraco.Media(CurrentPage.SectionBackgroundImage);
+            string imgUrl = String.Format("background-image:url('{0}')",m.Url);
+
+        <section class="@CurrentPage.SectionClass" style="@imgUrl">
+            <div class="bottom-effect"></div>
+            <div class="header-container wow fadeInUp">
+                <div class="header-title">
+                    <div class="header-icon"><span class="icon icon-Wheelbarrow"></span></div>
+                    <div class="title">@CurrentPage.SectionTitle</div>
+                    <em>@CurrentPage.SectionDescription</em>
+                </div>
+            </div>
+        </section>
+
+    }
+
+}
+
+@CurrentPage.GetGridHtml("content", "biztech")

@@ -1,0 +1,39 @@
+
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+<section class="features-section" id="@CurrentPage.Name.ToLower()">
+    <div class="container">
+        <div class="section-heading ">
+            <div class="section-title">@CurrentPage.Title</div>
+            <div class="section-subtitle">@CurrentPage.Description</div>
+            <div class="design-arrow"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            @foreach (var childPage in CurrentPage.Children)
+            {
+
+                <div class="col-md-3 col-sm-6 wow fadeIn">
+                    <article>
+                        <div class="feature-item ">
+                            <div class="wrap-feature-icon">
+                                <div class="feature-icon">
+                                    <span class="@childPage.GetPropertyValue("iconClass")"></span>
+                                </div>
+                            </div>
+                            <div class="title">@childPage.GetPropertyValue("title")</div>
+                            <div class="text">
+                                @childPage.GetPropertyValue("description")
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            }
+
+
+        </div>
+    </div>
+</section>
+ 

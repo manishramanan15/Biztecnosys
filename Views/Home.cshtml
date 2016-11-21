@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+
+@Html.Raw(umbraco.library.RenderMacroContent(CurrentPage.slider, CurrentPage.Id))
+
+
+@{
+
+    var feature = Model.Content.Children.Where("Name = \"Features\"").FirstOrDefault();
+    if (feature != null) { Html.RenderPartial(feature.Name, feature); }
+
+}
+
+
+
+@CurrentPage.GetGridHtml("content", "biztech")

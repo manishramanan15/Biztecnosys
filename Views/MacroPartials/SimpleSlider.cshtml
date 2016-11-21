@@ -1,0 +1,39 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    dynamic sliderData = (!String.IsNullOrEmpty(Model.MacroParameters["SliderData"].ToString())) ?
+        Json.Decode((dynamic)HttpUtility.HtmlDecode(Model.MacroParameters["SliderData"].ToString())) : null;
+}
+
+<section class="top-header home-header with-bottom-effect transparent-effect dark">
+    <div class="bottom-effect"></div>
+    <div class="header-container">
+        <div class="wrap-section-slider" id="topSlider">
+            <div class="sp-slides">
+                @foreach (var slide in sliderData)
+                {
+                    var link = slide.link;
+
+                    <div class="slide-item sp-slide">
+                        <div class="slide-image">
+                            <img src="@slide.img" alt="@slide.name" />
+                            <div class="slide-content ">
+                                <p class="top-title sp-layer" data-show-transition="left" data-hide-transition="up" data-show-delay="400" data-hide-delay="100">@slide.name</p>
+                                <div class="title sp-layer" data-show-transition="right" data-hide-transition="up" data-show-delay="500" data-hide-delay="150">@slide.summary</div>
+                                @if (link != null)
+                                {
+                                    <div class="controls sp-layer" data-show-transition="up" data-hide-transition="up" data-show-delay="800" data-hide-delay="250">
+                                        <a href="@umbraco.library.NiceUrl(link.id)" class="btn btn-primary">@link.name</a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div><!--./container-->
+</section>
+
+
+
+
