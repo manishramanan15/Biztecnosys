@@ -20,7 +20,8 @@ var naviLevel = home.Children.First().Level;
                     }
                     else
                     {
-                        <a href="@childPage.Url">@childPage.Name</a>}
+                        <a href="@childPage.Url">@childPage.Name</a>
+                    }
                 </li>
             }
             else
@@ -38,8 +39,8 @@ var naviLevel = home.Children.First().Level;
     if (pages.Any())
     {
         @* Get the first page in pages and get the level *@
-    var naviLevel = pages.First().Level;
-        <div class=" wrap-inside-nav">
+        var naviLevel = pages.First().Level;
+        <div class="wrap-inside-nav">
             <div class="inside-col">
                 @* Add in level for a CSS hook *@
                 <ul class="inside-nav level-@(naviLevel)">

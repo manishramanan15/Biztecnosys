@@ -59,17 +59,19 @@
 @helper childPages(dynamic pages)
 {
     @* Ensure that we have a collection of pages *@
-if (pages.Any())
-{
-    <ul class="footer-nav">
-        @foreach (var page in pages.Where("Visible"))
-        {
-            <li>
-                <a href="@page.Url">@page.Name</a>
-            </li>
-        }
-    </ul>
-}
+    if (pages.Any())
+    {
+
+        <ul class="footer-nav">
+            @foreach (var page in pages.Where("Visible"))
+            {
+
+                <li class="@(page.IsAncestorOrSelf(CurrentPage) ? "active" : null)">
+                    <a href="@page.Url">@page.Name</a>
+                </li>
+            }
+        </ul>
+    }
 }
 
 
