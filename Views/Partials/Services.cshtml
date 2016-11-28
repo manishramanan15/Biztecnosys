@@ -1,0 +1,47 @@
+
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+
+    int rowCount = CurrentPage.Children.Count() % 2;
+
+    <section class="services-section" id="@CurrentPage.Name.ToLower()">
+        <div class="container">
+            @for (int i = 0; i < rowCount; i++)
+            {
+                <div class="row">
+                    @for (int j = i * 3; j < (i+1) * 3; j++)
+                    {
+                        var childPage = CurrentPage.Children[j];
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="service-item">
+                                <div class="media-left">
+                                    <div class="wrap-service-icon">
+                                        <div class="service-icon">
+                                            <span class="@childPage.GetPropertyValue("iconClass")"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <h5>@childPage.Name</h5>
+                                    <p><em>@childPage.GetPropertyValue("sectionTitle")</em></p>
+                                    <p>
+                                        @childPage.GetPropertyValue("sectionDescription")
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="row">
+                    <div class="services-divider">
+                        <div class="col-md-4 col-sm-4 col-xs-4"></div>
+                        <div class="col-md-4 col-sm-4 col-xs-4"></div>
+                        <div class="col-md-4 col-sm-4 col-xs-4"></div>
+                    </div>
+                </div>
+            }
+            
+        </div>
+    </section>
+}
+
