@@ -7,7 +7,7 @@
     var oneColumn = ((System.Collections.ICollection)Model.sections).Count == 1;
     
 
-    <div class="umb-grid">
+    <section class="services-section">
         @if (oneColumn)
         {
             foreach (var section in Model.sections) 
@@ -38,7 +38,7 @@
                 </div>
             </div>   
         }
-    </div>
+    </section>
 }
 
 @helper renderRow(dynamic row, bool singleColumn)
