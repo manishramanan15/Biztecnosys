@@ -16,7 +16,7 @@
 
 @{
 
-    var services = Model.Content.Children.Where("Name = \"Explore\"").FirstOrDefault();
+    var services = Model.Content.Children.Where("Name = \"What We Do\"").FirstOrDefault();
     if (services != null) { Html.RenderPartial("Services", services); }
 
 }
