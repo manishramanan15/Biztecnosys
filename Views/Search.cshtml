@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+@{
+
+    <section class="top-header services-header with-bottom-effect transparent-effect dark" style="background-image:url('/media/1058/section-8.jpg')">
+        <div class="bottom-effect"></div>
+        <div class="header-container wow fadeInUp">
+            <div class="header-title">
+                <div class="header-icon"><span class="icon icon-Wheelbarrow"></span></div>
+                <div class="title">@CurrentPage.Title</div>
+                <em>@CurrentPage.Description</em>
+            </div>
+        </div>
+    </section>
+
+}
+
+
+@{
+    Html.RenderPartial("Search");
+}

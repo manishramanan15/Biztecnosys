@@ -1,0 +1,66 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@using Examine.LuceneEngine.SearchCriteria
+@{
+    if (!string.IsNullOrEmpty(Request.QueryString["search"]))
+    {
+
+        //Fetching what eva searchterm some bloke is throwin' our way
+        var q = Request.QueryString["search"];
+
+        //Fetching our SearchProvider by giving it the name of our searchprovider
+        var Searcher = Examine.ExamineManager.Instance.SearchProviderCollection["ExternalSearcher"];
+
+        //Searching and ordering the result by score, and we only want to get the results that has a minimum of 0.05(scale is up to 1.)
+        var searchResults = Searcher.Search(q, true).OrderByDescending(x => x.Score).TakeWhile(x => x.Score > 0.05f);
+
+        var count = searchResults.Count() == 0 ? 3 : searchResults.Count();
+
+        int cssGridmd = count > 12 ? 3 : (12 / count);
+        int cssGridsm = count > 12 ? 6 : (6 / count);
+
+
+
+        <section class="features-section" id="@CurrentPage.Name.ToLower()">
+            <div class="container">
+                <div class="section-heading ">
+                    <div class="section-title">@(String.IsNullOrEmpty(CurrentPage.Title) ? CurrentPage.Name : CurrentPage.Title)</div>
+                    <div class="section-subtitle">@CurrentPage.Description</div>
+                    <div class="design-arrow"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    @foreach (var item in searchResults)
+                {
+                    var childPage = Umbraco.Content(item.Fields["id"]);
+
+                        <div class="col-md-@cssGridmd col-sm-@cssGridsm wow fadeIn">
+                            <article>
+                                <div class="feature-item ">
+                                    <div class="wrap-feature-icon">
+                                        <div class="feature-icon">
+                                            <span class="@(string.IsNullOrEmpty(childPage.GetPropertyValue("iconClass")) ? "icon icon-Blog" : childPage.GetPropertyValue("iconClass"))"></span>
+                                        </div>
+                                    </div>
+                                    <div class="title">
+                                        <a href="@childPage.Url" class="btn">
+                                            @childPage.Name
+                                            <span class="icon icon-Goto"></span>
+                                        </a>
+                                    </div>
+                                    <div class="text">
+                                        @childPage.GetPropertyValue("sectionDescription")
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                    }
+
+
+                </div>
+            </div>
+        </section>
+    }
+}
