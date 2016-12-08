@@ -1,39 +1,48 @@
 
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    var count = CurrentPage.Children.Where("Visible").Count() == 0 ? 3 : CurrentPage.Children.Where("Visible").Count();
 
-<section class="features-section" id="@CurrentPage.Name.ToLower()">
-    <div class="container">
-        <div class="section-heading ">
-            <div class="section-title">@CurrentPage.Title</div>
-            <div class="section-subtitle">@CurrentPage.Description</div>
-            <div class="design-arrow"></div>
+    int cssGridmd = count > 12 ? 3 : (12 / count);
+    int cssGridsm = count > 12 ? 6 : (6 / count);
+    <section class="features-section" id="@CurrentPage.Name.ToLower()">
+        <div class="container">
+            <div class="section-heading ">
+                <div class="section-title">@(String.IsNullOrEmpty(CurrentPage.Title) ? CurrentPage.Name : CurrentPage.Title)</div>
+                <div class="section-subtitle">@CurrentPage.Description</div>
+                <div class="design-arrow"></div>
+            </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            @foreach (var childPage in CurrentPage.Children)
+        <div class="container">
+            <div class="row">
+                @foreach (var childPage in CurrentPage.Children.Where("Visible"))
             {
 
-                <div class="col-md-3 col-sm-6 wow fadeIn">
-                    <article>
-                        <div class="feature-item ">
-                            <div class="wrap-feature-icon">
-                                <div class="feature-icon">
-                                    <span class="@childPage.GetPropertyValue("iconClass")"></span>
+                    <div class="col-md-@cssGridmd col-sm-@cssGridsm wow fadeIn">
+                        <article>
+                            <div class="feature-item ">
+                                <div class="wrap-feature-icon">
+                                    <div class="feature-icon">
+                                        <span class="@(string.IsNullOrEmpty(childPage.GetPropertyValue("iconClass")) ? "icon icon-Blog" : childPage.GetPropertyValue("iconClass"))"></span>
+                                    </div>
+                                </div>
+                                <div class="title">
+                                    <a href="@childPage.Url" class="btn"> 
+                                        @(string.IsNullOrEmpty(childPage.GetPropertyValue("sectionTitle")) ? childPage.Name : childPage.GetPropertyValue("sectionTitle"))
+                                        <span class="icon icon-Goto"></span>
+                                    </a>
+                                </div>
+                                <div class="text">
+                                    @childPage.GetPropertyValue("sectionDescription")
                                 </div>
                             </div>
-                            <div class="title">@childPage.GetPropertyValue("title")</div>
-                            <div class="text">
-                                @childPage.GetPropertyValue("description")
-                            </div>
-                        </div>
-                    </article>
-                </div>
+                        </article>
+                    </div>
 
-            }
+                }
 
 
+            </div>
         </div>
-    </div>
-</section>
- 
+    </section>
+} 

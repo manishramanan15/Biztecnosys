@@ -9,17 +9,15 @@
 
 @{
 
-    var feature = Model.Content.Children.Where("Name = \"Features\"").FirstOrDefault();
-    if (feature != null) { Html.RenderPartial(feature.Name, feature); }
-
+    var home = Model.Content.Site();
+    foreach (var childPage in home.Children.Where("DocumentTypeAlias =\"LandingPage\" and Visible"))
+    {
+        Html.RenderPartial("Features", childPage);
+    }
+    
+    
 }
 
-@{
-
-    var services = Model.Content.Children.Where("Id = 1068").FirstOrDefault();
-    if (services != null) { Html.RenderPartial("Services", services); }
-
-}
 
 
 @CurrentPage.GetGridHtml("content", "biztech")
