@@ -10,7 +10,7 @@
 @{
 
     var home = Model.Content.Site();
-    foreach (var childPage in home.Children.Where("DocumentTypeAlias =\"LandingPage\" and Visible"))
+    foreach (var childPage in home.Children.Where("DocumentTypeAlias =\"LandingPage\" and Visible and Name != \"Search\""))
     {
         Html.RenderPartial("Features", childPage);
     }
