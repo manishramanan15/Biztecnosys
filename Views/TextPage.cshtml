@@ -5,10 +5,10 @@
 
 @{
 
-        if (Model.Content.HasValue("SectionBackgroundImage"))
-        {
-            var m = Umbraco.Media(CurrentPage.SectionBackgroundImage);
-            string imgUrl = String.Format("background-image:url('{0}')",m.Url);
+    if (Model.Content.HasValue("SectionBackgroundImage"))
+    {
+        var m = Umbraco.Media(CurrentPage.SectionBackgroundImage);
+        string imgUrl = String.Format("background-image:url('{0}?quality=90')", m.Url);
 
         <section class="@CurrentPage.SectionClass" style="@imgUrl">
             <div class="bottom-effect"></div>
