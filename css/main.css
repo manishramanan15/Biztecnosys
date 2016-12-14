@@ -988,92 +988,12 @@ body.fixed-header .scrolling-header .navbar .wrap-inside-nav { /*top: 64px;*/ }
 	color: #fff;
 }
 
-.dark a,
-.dark a:visited {
-	color: #f45376;
-}
-
-.dark a:hover,
-.dark a:visited:hover {
-	text-decoration: underline;
-}
-
-.dark a.button {
-	border: 1px solid #fff;
-	background: rgba(255, 255, 255, 0);
-	color: #fff;
-}
-
-.dark a.button:hover {
-	background: #fff;
-	color: #000;
-}
-
-.dark a.button.fill {
-	background: #fff;
-	color: #000;
-}
-
-.dark a.button.fill:hover {
-	background: rgba(255, 255, 255, 0.5);
-	color: #fff;
-}
-
-.dark code,
-.dark pre {
-	background-color: rgba(248, 248, 248, 0.1);
-}
-
-.dark + .triangle:before {
-	border-color: transparent transparent transparent #1c1c1e;
-}
-
 .light {
 	background: #fff;
 }
 
 .light * {
 	color: #000;
-}
-
-.light a,
-.light a:visited {
-	color: #f45376 !important;
-}
-
-.light a:hover,
-.light a:visited:hover {
-	text-decoration: underline;
-}
-
-.light a.button {
-	border: 1px solid #000;
-	background: transparent;
-	color: #000;
-}
-
-.light a.button:hover {
-	background: #000;
-	color: #fff;
-}
-
-.light a.button.fill {
-	background: #000;
-	color: #fff;
-}
-
-.light a.button.fill:hover {
-	background: rgba(0, 0, 0, 0.2);
-	color: #000;
-}
-
-.light code,
-.light pre {
-	background-color: #f8f8f8;
-}
-
-.light + .triangle:before {
-	border-color: transparent transparent transparent #fff;
 }
 
 .yellow {
@@ -1084,36 +1004,6 @@ body.fixed-header .scrolling-header .navbar .wrap-inside-nav { /*top: 64px;*/ }
 	color: #000;
 }
 
-.yellow a,
-.yellow a:visited {
-	color: #f42146;
-}
-
-.yellow a.button {
-	border: 1px solid #000;
-	background: transparent;
-	color: #000;
-}
-
-.yellow a.button:hover {
-	background: #000;
-	color: #FFCC01;
-}
-
-.yellow a.button.fill {
-	background: #000;
-	color: #FFCC01;
-}
-
-.yellow a.button.fill:hover {
-	background: rgba(0, 0, 0, 0.2);
-	color: #000;
-}
-
-.yellow + .triangle:before {
-	border-color: transparent transparent transparent #FFCC01;
-}
-
 .blue {
 	background: #51c1f5;
 }
@@ -1122,82 +1012,12 @@ body.fixed-header .scrolling-header .navbar .wrap-inside-nav { /*top: 64px;*/ }
 	color: #fff;
 }
 
-.blue a,
-.blue a:visited {
-	text-decoration: underline;
-}
-
-.blue a:hover,
-.blue a:visited:hover {
-	text-decoration: none;
-}
-
-.blue a.button {
-	border: 1px solid #fff;
-	background: rgba(255, 255, 255, 0);
-	text-decoration: none;
-}
-
-.blue a.button:hover {
-	background: #fff;
-	color: #51c1f5;
-}
-
-.blue a.button.fill {
-	background: #fff;
-	color: #51c1f5;
-}
-
-.blue a.button.fill:hover {
-	background: rgba(255, 255, 255, 0.5);
-	color: #fff;
-}
-
-.blue + .triangle:before {
-	border-color: transparent transparent transparent #51c1f5;
-}
-
 .purple {
 	background: #C2357B;
 }
 
 .purple * {
 	color: #fff;
-}
-
-.purple a,
-.purple a:visited {
-	text-decoration: underline;
-}
-
-.purple a:hover,
-.purple a:visited:hover {
-	text-decoration: none;
-}
-
-.purple a.button {
-	border: 1px solid #fff;
-	background: rgba(255, 255, 255, 0);
-	text-decoration: none;
-}
-
-.purple a.button:hover {
-	background: #fff;
-	color: #C2357B;
-}
-
-.purple a.button.fill {
-	background: #fff;
-	color: #C2357B;
-}
-
-.purple a.button.fill:hover {
-	background: rgba(255, 255, 255, 0.5);
-	color: #fff;
-}
-
-.purple + .triangle:before {
-	border-color: transparent transparent transparent #C2357B;
 }
 
 .dark,
