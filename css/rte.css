@@ -28,7 +28,6 @@ font-size: 1rem;
 /**umb_name:Header*/
 #Header{
  
-    color: #333333;
     margin-top: 10px;
     font-weight: bold;
     font-size: 32px;
@@ -39,7 +38,6 @@ font-size: 1rem;
 
 /**umb_name:Header 2*/
 #Header2{
-        color: #333333;
     margin-top: 10px;
     font-weight: bold;
     font-size: 26px;
@@ -49,7 +47,6 @@ font-size: 1rem;
 
 /**umb_name:Header 3*/
 #Header3{
-    color: #333333;
     margin-top: 10px;
     font-weight: bold;
     font-size: 20px;
@@ -58,7 +55,11 @@ font-size: 1rem;
 }
 
 /**umb_name:Smooth*/
-#Smooth{}
+#Smooth{
+   font-family:"Raleway, sans-serif";
+   font-size:16px;
+
+}
 
 /**umb_name:Paragraph*/
 #Paragraph{}
