@@ -9,10 +9,7 @@
             <div class="col-md-3 col-sm-3">
                 <h5>about us</h5>
                 <p>
-                    Lorem ipsum dolor sit amet consect etural
-                    adipisicing elit sed don eiusmod temp enim
-                    minim veniam quis notrud exercitation lore
-                    ipsum dolor sit amet.
+                    we are expert in Umbraco CMS,Magento E-commerce and Vtiger CRM.
                 </p>
             </div>
             <div class="col-md-3 col-sm-3">
@@ -24,6 +21,7 @@
                     foreach (var childPage in home.Children.Where("Visible"))
                     {
                         <div class="col-md-6">
+                            @childPage.Name
                             @if (childPage.Children.Where("Visible").Any())
                             {
                                 @childPages(childPage.Children)
@@ -37,13 +35,16 @@
                 <h5>Contact info</h5>
                 <ul class="contacts-list">
                     <li>
-                        <p><i class="icon icon-House"></i>68 Landsriver Street, California  USA 22036</p>
+                        <p><i class="icon icon-House"></i>964 Lalbahadur shastri nagar,BDA,11th block,10th phase,Gotigere post,anjanapura, Banglore  India 560083</p>
                     </li>
                     <li>
-                        <p><i class="icon icon-Phone2"></i>0800 126 01268</p>
+                        <p><i class="icon icon-Phone2"></i>USA - (+1) 5032788794</p>
                     </li>
                     <li>
-                        <p><i class="icon icon-Mail"></i><a href="mailto:support@oscend.com">support@oscend.com</a> </p>
+                        <p><i class="icon icon-Phone2"></i>India - 8460388974</p>
+                    </li>
+                    <li>
+                        <p><i class="icon icon-Mail"></i><a href="mailto:info@biztechnosys.com.com">info@biztechnosys.com</a> </p>
 
                     </li>
                 </ul>
@@ -59,19 +60,19 @@
 @helper childPages(dynamic pages)
 {
     @* Ensure that we have a collection of pages *@
-    if (pages.Any())
-    {
+if (pages.Any())
+{
 
-        <ul class="footer-nav">
-            @foreach (var page in pages.Where("Visible"))
-            {
+    <ul class="footer-nav">
+        @foreach (var page in pages.Where("Visible"))
+        {
 
-                <li class="@(page.IsAncestorOrSelf(CurrentPage) ? "active" : null)">
-                    <a href="@page.Url">@page.Name</a>
-                </li>
-            }
-        </ul>
-    }
+            <li class="@(page.IsAncestorOrSelf(CurrentPage) ? "active" : null)">
+                <a href="@page.Url">@page.Name</a>
+            </li>
+        }
+    </ul>
+}
 }
 
 
