@@ -22,9 +22,9 @@
                     {
                         <div class="col-md-6">
 
-                            <h6>@childPage.Name</h6>
                             @if (childPage.Children.Where("Visible").Any())
                             {
+                                <h6>@childPage.Name</h6>
                                 @childPages(childPage.Children)
                             }
 
