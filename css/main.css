@@ -1142,6 +1142,7 @@ body.fixed-header .scrolling-header .navbar .wrap-inside-nav { /*top: 64px;*/ }
 
 h6 {
      color: #ccc;
+     font-size: 1rem;
 }
 h6:after {
     content: "";
