@@ -21,11 +21,13 @@
                     foreach (var childPage in home.Children.Where("Visible"))
                     {
                         <div class="col-md-6">
-                            @childPage.Name
+
+                            <h6>@childPage.Name</h6>
                             @if (childPage.Children.Where("Visible").Any())
                             {
                                 @childPages(childPage.Children)
                             }
+
                         </div>
                         }
                     }

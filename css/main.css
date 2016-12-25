@@ -1140,4 +1140,15 @@ body.fixed-header .scrolling-header .navbar .wrap-inside-nav { /*top: 64px;*/ }
 	padding: 2px 0 0;
 }
 
+h6 {
+     color: #ccc;
+}
+h6:after {
+    content: "";
+    display: block;
+    margin-bottom: 5px;
+    width: 15px;
+    height: 4px;
+    background: #ff6400;
+}
 
