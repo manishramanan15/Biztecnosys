@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row">
                 @foreach (var childPage in CurrentPage.Children.Where("Visible"))
-            {
+                  {
 
                     <div class="col-md-@cssGridmd col-sm-@cssGridmd wow fadeIn">
                         <article>
@@ -27,8 +27,8 @@
                                     </div>
                                 </div>
                                 <div class="title">
-                                    <a href="@childPage.Url" class="btn"> 
-                                        @childPage.Name
+                                    @childPage.Name
+                                    <a href="@childPage.Url">
                                         <span class="icon icon-Goto"></span>
                                     </a>
                                 </div>
